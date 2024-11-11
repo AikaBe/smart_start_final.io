@@ -35,8 +35,6 @@ Stripe API (for handling secure payments on the Home Services Page)
 Installation
 Clone the repository:
 
-bash
-Копировать код
 git clone https://github.com/your-username/your-repository.git
 Navigate to the project directory and open the files in your preferred code editor.
 
