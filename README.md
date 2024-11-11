@@ -34,8 +34,8 @@ Bootstrap
 Stripe API (for handling secure payments on the Home Services Page)
 Installation
 Clone the repository:
+git@github.com:AikaBe/smart-start.git
 
-git clone https://github.com/your-username/your-repository.git
 Navigate to the project directory and open the files in your preferred code editor.
 
 Usage
@@ -80,9 +80,9 @@ Submission Confirmation: Upon submission, applicants receive a confirmation mess
 Application Management: Startups can view, shortlist, and contact applicants who meet their criteria.
 Getting Started
 
-Clone the Repository: Clone the repository to your local machine using Git:
+HTTPS:
+https://github.com/AikaBe/smart-start.git
 
-git clone https://github.com/your-username/your-repository.git
 Open the HTML Files: Navigate to the project directory and open any HTML file in your preferred web browser to view the pages.
 
 Modify Files:
