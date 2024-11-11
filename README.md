@@ -81,10 +81,9 @@ Application Form: Users can apply for a position directly through an intuitive a
 Submission Confirmation: Upon submission, applicants receive a confirmation message and can track their application status in the dashboard.
 Application Management: Startups can view, shortlist, and contact applicants who meet their criteria.
 Getting Started
+
 Clone the Repository: Clone the repository to your local machine using Git:
 
-bash
-Копировать код
 git clone https://github.com/your-username/your-repository.git
 Open the HTML Files: Navigate to the project directory and open any HTML file in your preferred web browser to view the pages.
 
