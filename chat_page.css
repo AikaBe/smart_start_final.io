@@ -1,0 +1,169 @@
+body {
+  background-color: white;
+  color: black;
+}
+
+/* Navbar */
+.navbar {
+  background-color: #333;
+  color: white;
+}
+
+button,
+.btn {
+  background-color: #fafc57 !important;
+  border-color: #fafc57 !important;
+  color: black !important;
+}
+
+button:hover,
+.btn:hover {
+  background-color: #dcdc30 !important;
+}
+
+.message-role {
+  font-weight: bold;
+  color: #fafc57;
+  margin-right: 5px;
+}
+
+.chat-area {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 5px;
+  max-height: 60vh;
+  overflow-y: auto;
+}
+
+.message {
+  max-width: 75%;
+  padding: 10px;
+  border-radius: 10px;
+  margin: 10px 0;
+}
+
+.message-left {
+  background-color: #e0e0e0;
+  text-align: left;
+  margin-right: auto;
+  border: 1px solid #ccc;
+}
+
+/* Set the color of the user list text */
+.user-link {
+  color: #737373; /* Replace #4a90e2 with your desired color */
+  text-decoration: none; /* Optional: remove underline */
+}
+
+.user-link:hover {
+  color: #737373; /* Optional: different color on hover */
+  text-decoration: underline; /* Optional: underline on hover */
+}
+
+.message-right {
+  background-color: #222222;
+  color: white;
+  text-align: right;
+  margin-left: auto;
+  border: 1px solid #ccc;
+}
+
+input[type="text"],
+.form-control {
+  background-color: #f4f4f4;
+  color: black;
+}
+
+#user-list {
+  background-color: #f4f4f4;
+}
+
+footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+}
+
+#theme-toggle {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+}
+
+#theme-toggle img {
+  width: 24px;
+  height: 24px;
+}
+
+.dark-theme {
+  background-color: #333;
+  color: white;
+}
+@media (max-width: 768px) {
+  .chat-area {
+    padding: 15px;
+    max-height: 50vh;
+  }
+
+  .message {
+    max-width: 90%;
+    font-size: 14px;
+    padding: 8px;
+  }
+
+  .message-left,
+  .message-right {
+    font-size: 14px;
+  }
+
+  .navbar,
+  footer {
+    text-align: center;
+  }
+
+  button,
+  .btn {
+    padding: 8px 12px;
+    font-size: 14px;
+  }
+
+  input[type="text"],
+  .form-control {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .chat-area {
+    padding: 10px;
+    max-height: 50vh;
+  }
+
+  .message {
+    max-width: 90%;
+    font-size: 12px;
+    padding: 6px;
+  }
+
+  button,
+  .btn {
+    padding: 6px 10px;
+    font-size: 12px;
+  }
+
+  input[type="text"],
+  .form-control {
+    width: 100%;
+    padding: 8px;
+    font-size: 12px;
+  }
+
+  #theme-toggle img {
+    width: 20px;
+    height: 20px;
+  }
+}

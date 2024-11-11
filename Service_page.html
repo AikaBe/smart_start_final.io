@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <script src="https://js.stripe.com/v3/"></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SMART START</title>
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assignment6_style.css" />
+    <style>
+      /* Responsive adjustments */
+      body {
+        transition: background-color 0.3s, color 0.3s;
+      }
+      [data-theme="dark"] {
+        background-color: #121212;
+        color: #e0e0e0;
+      }
+      .card {
+        transition: transform 0.3s, box-shadow 0.3s;
+      }
+      .card:hover {
+        transform: scale(1.05);
+        box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+      }
+      .btn-warning {
+        transition: background-color 0.3s, color 0.3s;
+      }
+      .btn-warning:hover {
+        background-color: #ffd700;
+        color: #000;
+      }
+      /* Toggle button for Learn More details */
+      .card-body .extra-info {
+        display: none;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+      .card-body:hover .extra-info {
+        display: block;
+        opacity: 1;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Bootstrap Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <a class="navbar-brand" href="Services_page.html">SMART START</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="Chat_page.html">Chat</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="Profile.html">Profile</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="home.html">Home</a>
+          </li>
+        </ul>
+        <!-- Light/Dark Mode Toggle Button -->
+        <button id="theme-toggle" class="btn btn-link">
+          <img
+            id="theme-icon"
+            src="img/5235480252841585607.jpg"
+            alt="Light Bulb Icon"
+            style="width: 30px"
+          />
+        </button>
+        <script>
+          const themeToggle = document.getElementById("theme-toggle");
+          const themeIcon = document.getElementById("theme-icon");
+          let isLightMode = true;
+
+          themeToggle.addEventListener("click", () => {
+            isLightMode = !isLightMode;
+            document.documentElement.setAttribute(
+              "data-theme",
+              isLightMode ? "light" : "dark"
+            );
+            themeIcon.src = isLightMode
+              ? "img/5235480252841585607.jpg" // Light mode icon
+              : "img/5235480252841585608.jpg"; // Dark mode icon
+          });
+        </script>
+      </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container my-5">
+      <h2>Our Services</h2>
+      <div class="service-description">
+        <p>
+          We offer innovative services to get your business started on the right
+          foot. Choose from a variety of investment plans and let us help you
+          grow.
+        </p>
+        <button id="read-more" class="btn btn-info">Read More</button>
+        <div id="more-info" style="display: none">
+          <p>
+            SMART START is your ultimate platform designed to bridge the gap
+            between startups and investors, as well as connect freelancers with
+            exciting job opportunities. Whether you're an entrepreneur seeking
+            funding or an investor looking for the next big idea, SMART START
+            offers a seamless and efficient way to find the perfect match. Our
+            service is unique because it combines advanced algorithms with a
+            user-friendly interface to ensure you find exactly what you need,
+            when you need it.
+          </p>
+        </div>
+      </div>
+      <script>
+        const readMoreButton = document.getElementById("read-more");
+        const moreInfo = document.getElementById("more-info");
+
+        readMoreButton.addEventListener("click", () => {
+          // Toggle visibility of the 'more-info' section
+          if (moreInfo.style.display === "none") {
+            moreInfo.style.display = "block";
+            readMoreButton.textContent = "Read Less"; // Change button text to 'Read Less'
+          } else {
+            moreInfo.style.display = "none";
+            readMoreButton.textContent = "Read More"; // Change button text back to 'Read More'
+          }
+        });
+      </script>
+      <div class="row">
+        <!-- Service Plan Cards -->
+        <div class="col-lg-4 col-md-6 mb-4">
+          <div class="card">
+            <img
+              src="img/5301208658518074064.jpg"
+              class="card-img-top"
+              alt="Plan A"
+            />   
+            <!-- <button id="toggle-theme">click</button> -->
+            <div class="card-body">
+              <h5 class="card-title">Standard</h5>
+              <p class="card-text">
+                10$ plan. The Standard Plan is designed for startups and small
+                businesses looking to get started with essential services at an
+                affordable price.
+              </p>
+              <a
+                href="https://buy.stripe.com/test_7sI4kd7il4VfbVSeUU"
+                target="_blank"
+                class="btn btn-warning learn-more"
+                style="background-color: #fcfe58; border: none"
+                >Buy Now</a
+              >
+              <div class="extra-info">
+                <p>Additional details for Standard Plan.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 mb-4">
+          <div class="card">
+            <img
+              src="img/5301208658518074063.jpg"
+              class="card-img-top"
+              alt="Plan B"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Plus</h5>
+              <p class="card-text">
+                100$ plan. The Plus Plan offers everything in the Standard Plan,
+                plus additional premium features such as enhanced business
+                support and priority access to investors.
+              </p>
+              <a
+                href="https://buy.stripe.com/test_aEU5oh1Y15Zj8JG8wx"
+                target="_blank"
+                class="btn btn-warning learn-more"
+                style="background-color: #fcfe58; border: none"
+                >Buy Now</a
+              >
+              <div class="extra-info">
+                <p>Additional details for Plus Plan.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 mb-4">
+          <div class="card">
+            <img
+              src="img/5301208658518074067.jpg"
+              class="card-img-top"
+              alt="Plan C"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Premium</h5>
+              <p class="card-text">
+                1,000$ plan. The Premium Plan is the ultimate package for
+                businesses aiming for rapid growth and long-term success,
+                including full access to exclusive networking events and expert
+                consulting services.
+              </p>
+              <a
+                href="https://buy.stripe.com/test_eVag2VdGJdrL9NKaEG"
+                target="_blank"
+                class="btn btn-warning learn-more"
+                style="background-color: #fcfe58; border: none"
+                >Buy Now</a
+              >
+              <div class="extra-info">
+                <p>Additional details for Premium Plan.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Image Gallery -->
+      <h2>Image Gallery</h2>
+      <div class="image-gallery">
+        <img
+          src="img/5301208658518074064.jpg"
+          alt="Thumbnail A"
+          class="thumbnail"
+          data-large="img/5301208658518074064.jpg"
+        />
+        <img
+          src="img/5301208658518074063.jpg"
+          alt="Thumbnail B"
+          class="thumbnail"
+          data-large="img/5301208658518074063.jpg"
+        />
+        <img
+          src="img/5301208658518074067.jpg"
+          alt="Thumbnail C"
+          class="thumbnail"
+          data-large="img/5301208658518074067.jpg"
+        />
+      </div>
+
+      <!-- Modal for displaying large image -->
+      <div class="modal" id="imageModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button
+                type="button"
+                class="close"
+                data-dismiss="modal"
+                aria-label="Close"
+              >
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <img src="" alt="Large Image" id="modalImage" class="img-fluid" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Accordion for FAQs -->
+      <h2>FAQs</h2>
+      <div class="accordion" id="faqAccordion">
+        <div class="card">
+          <div class="card-header" id="headingOne">
+            <h5 class="mb-0">
+              <button
+                class="btn btn-link"
+                type="button"
+                data-toggle="collapse"
+                data-target="#collapseOne"
+                aria-expanded="true"
+                aria-controls="collapseOne"
+              >
+                What is SMART START?
+              </button>
+            </h5>
+          </div>
+
+          <div
+            id="collapseOne"
+            class="collapse show"
+            aria-labelledby="headingOne"
+            data-parent="#faqAccordion"
+          >
+            <div class="card-body">
+              SMART START is a platform that provides innovative services to
+              help entrepreneurs establish and grow their businesses.
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header" id="headingTwo">
+            <h5 class="mb-0">
+              <button
+                class="btn btn-link collapsed"
+                type="button"
+                data-toggle="collapse"
+                data-target="#collapseTwo"
+                aria-expanded="false"
+                aria-controls="collapseTwo"
+              >
+                How can I contact you?
+              </button>
+            </h5>
+          </div>
+          <div
+            id="collapseTwo"
+            class="collapse"
+            aria-labelledby="headingTwo"
+            data-parent="#faqAccordion"
+          >
+            <div class="card-body">
+              You can contact us through our Contact page or email us at
+              support@smartstart.com.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="text-center py-3">
+      <p>2024 SMART START. All rights reserved.</p>
+      <p>Made by: Aizharkyn Beisekeyeva & Aizhan Bekmanova</p>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="script.js" defer></script> 
+    <script>
+      // Add click event for image thumbnails
+      const thumbnails = document.querySelectorAll(".image-gallery .thumbnail");
+      const modal = document.getElementById("imageModal");
+      const modalImage = document.getElementById("modalImage");
+
+      thumbnails.forEach((thumbnail) => {
+        thumbnail.addEventListener("click", () => {
+          const largeImageUrl = thumbnail.getAttribute("data-large");
+          modalImage.src = largeImageUrl;
+          $("#imageModal").modal("show"); // Using Bootstrap's modal
+        });
+      });
+    </script>
+  </body>
+</html>

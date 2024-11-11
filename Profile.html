@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Profile Page</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <style>
+      /* General Page Styles */
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        transition: background-color 0.3s, color 0.3s;
+      }
+
+      /* Light and Dark Theme Styles */
+      [data-theme="light"] {
+        --background-color: #f9f9f9;
+        --text-color: #333;
+        --navbar-background: #ffffff;
+        --button-color: #e5e000;
+        --button-text-color: #333;
+        --input-background: #ffffff;
+        --input-text-color: #333;
+        --box-shadow-color: rgba(0, 0, 0, 0.1);
+        --border-color: #ddd;
+      }
+
+      [data-theme="dark"] {
+        --background-color: #121212;
+        --text-color: #e0e0e0;
+        --navbar-background: #1e1e1e;
+        --button-color: #333;
+        --button-text-color: #e5e000;
+        --input-background: #333;
+        --input-text-color: #e0e0e0;
+        --box-shadow-color: rgba(255, 255, 255, 0.1);
+        --border-color: #555;
+      }
+
+      /* Apply Theme Variables */
+      body {
+        background-color: var(--background-color);
+        color: var(--text-color);
+      }
+
+      .navbar {
+        background-color: var(--navbar-background);
+        padding: 10px 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-shadow: 0px 4px 8px var(--box-shadow-color);
+      }
+
+      .navbar a {
+        color: var(--text-color);
+        text-decoration: none;
+        padding: 10px;
+        transition: color 0.3s;
+      }
+
+      .navbar a:hover {
+        color: #e5e000;
+      }
+
+      /* SMART START Text */
+      .header-text {
+        font-weight: bold;
+        color: #e5e000;
+        font-size: 1.5em;
+        margin-right: auto;
+        padding-left: 20px;
+      }
+
+      /* Profile Container */
+      .container {
+        text-align: center;
+        padding: 20px;
+        width: 600px;
+        background-color: var(--input-background);
+        color: var(--text-color);
+        border-radius: 8px;
+        box-shadow: 0px 0px 10px var(--box-shadow-color);
+        margin-top: 80px;
+        transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
+      }
+
+      /* Profile Picture */
+      .profile-photo img {
+        border-radius: 50%;
+        width: 150px;
+        height: 150px;
+        box-shadow: 0px 4px 8px var(--box-shadow-color);
+      }
+
+      /* File Input Styling */
+      input[type="file"] {
+        margin-top: 10px;
+        background-color: var(--input-background);
+        color: var(--input-text-color);
+        padding: 5px;
+        border: 1px solid var(--border-color);
+        border-radius: 4px;
+        transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+      }
+
+      /* Button Styling */
+      button {
+        padding: 10px 20px;
+        background-color: var(--button-color);
+        color: var(--button-text-color);
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-top: 15px;
+        transition: background-color 0.3s, color 0.3s;
+      }
+
+      button:hover {
+        background-color: var(--button-text-color);
+        color: var(--button-color);
+      }
+
+      /* Text Area Styling */
+      textarea {
+        width: 100%;
+        padding: 10px;
+        margin-top: 10px;
+        border-radius: 5px;
+        border: 1px solid var(--border-color);
+        background-color: var(--input-background);
+        color: var(--input-text-color);
+        font-size: 14px;
+        transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+      }
+
+      /* Role Tag Styles */
+      .role-tag {
+        display: inline-block;
+        padding: 5px 10px;
+        background-color: var(--button-color);
+        color: var(--button-text-color);
+        border-radius: 5px;
+        margin-top: 10px;
+      }
+
+      /* Theme Toggle */
+      #theme-toggle {
+        background: none;
+        border: none;
+        cursor: pointer;
+      }
+
+      #theme-toggle img {
+        width: 30px;
+        height: auto;
+      }
+      @media (max-width: 768px) {
+  .container {
+    width: 90%;
+    padding: 15px;
+  }
+
+  .header-text {
+    font-size: 1.2em;
+  }
+
+  .profile-photo img {
+    width: 120px;
+    height: 120px;
+  }
+
+  button {
+    padding: 8px 15px;
+    font-size: 14px;
+  }
+
+  textarea {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar {
+    padding: 8px 15px;
+  }
+
+  .header-text {
+    font-size: 1em;
+  }
+
+  .profile-photo img {
+    width: 100px;
+    height: 100px;
+  }
+
+  .container {
+    padding: 10px;
+    margin-top: 40px;
+  }
+
+  button {
+    padding: 6px 12px;
+    font-size: 12px;
+  }
+
+  textarea {
+    font-size: 12px;
+  }
+
+  input[type="file"] {
+    font-size: 12px;
+    padding: 4px;
+  }
+
+  .navbar a {
+    padding: 8px;
+    font-size: 12px;
+  }
+}
+    </style>
+  </head>
+  <body>
+    <!-- Navbar with Links and SMART START Text -->
+    <nav class="navbar">
+      <div class="header-text">SMART START</div>
+      <div class="navbar-links">
+        <a href="home.html" class="navbar-link">Home</a>
+        <a href="Service_page.html" class="navbar-link">Services</a>
+        <a href="Chat_page.html" class="navbar-link">Chat</a>
+      </div>
+      <button id="theme-toggle">
+        <img
+          id="theme-icon"
+          src= "img/5235480252841585607.jpg"
+          alt="Theme Toggle Icon"
+        />
+      </button>
+    </nav>
+
+ <!-- Profile Section -->
+ <div class="container" id="profile-section">
+  <h2>Profile</h2>
+  <div class="profile-photo">
+    <img
+      id="profile-pic"
+      src="https://via.placeholder.com/150"
+      alt="Profile Picture"
+    />
+    <input
+      type="file"
+      id="photo-upload"
+      onchange="uploadPhoto()"
+      accept="image/*"
+    />
+  </div>
+  
+  <div class="profile-info">
+    <p id="profile-username"></p>
+    <p id="profile-email"></p>
+    <p id="profile-phone"></p>
+  </div>
+
+  <div class="profile-description">
+    <h3>About You</h3>
+    <textarea
+      id="profile-description"
+      placeholder="Tell us about yourself..."
+    ></textarea>
+    <button onclick="saveDescription()">Save Description</button>
+  </div>
+  <button onclick="logout()">Logout</button>
+</div>
+
+<script>
+  // Initialize Theme on page load
+  document.addEventListener("DOMContentLoaded", function () {
+      const savedTheme = localStorage.getItem("theme");
+      if (savedTheme) {
+          document.documentElement.setAttribute("data-theme", savedTheme);
+          updateThemeIcon(savedTheme);
+      } else {
+          document.documentElement.setAttribute("data-theme", "light");
+      }
+  });
+
+  // Theme Toggle Functionality
+  const themeToggle = document.getElementById("theme-toggle");
+  themeToggle.addEventListener("click", function () {
+      const currentTheme = document.documentElement.getAttribute("data-theme");
+      const newTheme = currentTheme === "light" ? "dark" : "light";
+      document.documentElement.setAttribute("data-theme", newTheme);
+      localStorage.setItem("theme", newTheme);
+      updateThemeIcon(newTheme);
+  });
+
+  function updateThemeIcon(theme) {
+      const themeIcon = document.getElementById("theme-icon");
+      themeIcon.src = theme === "dark" ? "img/5235480252841585608.jpg" : "img/5235480252841585607.jpg";
+  }
+
+  // Logout Function
+  function logout() {
+  localStorage.removeItem("userData");
+  localStorage.removeItem("profilePic");
+  localStorage.removeItem("theme");
+  window.location.href = "index.html";
+}
+
+  // Load user data on page load
+  document.addEventListener("DOMContentLoaded", function () {
+      const loggedInUserEmail = sessionStorage.getItem('loggedInUser');
+      
+      if (loggedInUserEmail) {
+          const userData = JSON.parse(localStorage.getItem(loggedInUserEmail));
+          
+          if (userData) {
+              document.getElementById('profile-username').textContent = `Username: ${userData.username}`;
+              document.getElementById('profile-email').textContent = `Email: ${userData.email}`;
+              document.getElementById('profile-phone').textContent = `Phone: ${userData.phone}`;
+              document.getElementById('profile-description').value = userData.description || "";
+              const storedProfilePic = localStorage.getItem("profilePic");
+              document.getElementById("profile-pic").src = storedProfilePic || "https://via.placeholder.com/150";
+          }
+      } else {
+          window.location.href = 'login.html';
+      }
+  });
+
+  // Save Description Function
+  function saveDescription() {
+      const description = document.getElementById("profile-description").value;
+      const loggedInUserEmail = sessionStorage.getItem("loggedInUser");
+      
+      if (loggedInUserEmail) {
+          const userData = JSON.parse(localStorage.getItem(loggedInUserEmail)) || {};
+          userData.description = description;
+          localStorage.setItem(loggedInUserEmail, JSON.stringify(userData));
+          alert("Description saved successfully!");
+      }
+  }
+
+  // Upload Photo Function
+  function uploadPhoto() {
+      const fileInput = document.getElementById("photo-upload");
+      const file = fileInput.files[0];
+      
+      if (file) {
+          const reader = new FileReader();
+          reader.onload = function(event) {
+              const base64Image = event.target.result;
+              localStorage.setItem("profilePic", base64Image);
+              document.getElementById("profile-pic").src = base64Image;
+              alert("Profile picture updated successfully!");
+          };
+          reader.readAsDataURL(file);
+      }
+  }
+</script>
+
+  </body>
+</html>

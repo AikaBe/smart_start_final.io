@@ -1,0 +1,158 @@
+/* Basic Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Light Theme */
+[data-theme="light"] {
+  --background-color: #ffffff;
+  --text-color: #000000;
+  --navbar-background: #888888;
+  --button-color: #a6a6a6;
+  --button-text: #000000;
+  --highlight-color: #faff00;
+}
+
+/* Dark Theme */
+[data-theme="dark"] {
+  --background-color: #000000;
+  --text-color: #ffffff;
+  --navbar-background: #737373;
+  --button-color: #888888;
+  --button-text: #000000;
+  --highlight-color: #faff00;
+}
+
+/* Apply Theme Variables */
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+.navbar {
+  background-color: var(--navbar-background);
+}
+
+.navbar-brand,
+.navbar-nav .nav-link {
+  color: var(--text-color);
+}
+
+.btn-info {
+  background-color: var(--button-color);
+  color: var(--button-text);
+  border: none;
+}
+
+.btn-warning {
+  background-color: var(--highlight-color);
+  color: var(--button-text);
+  border: none;
+}
+
+.card {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  border: 1px solid var(--button-color);
+}
+
+.card-title {
+  color: var(--text-color);
+}
+
+/* Image Gallery */
+.image-gallery img {
+  cursor: pointer;
+  margin: 5px;
+  width: 100px;
+  height: auto;
+  transition: transform 0.2s;
+}
+
+.image-gallery img:hover {
+  transform: scale(1.1);
+}
+
+/* Accordion */
+.accordion .card-header {
+  background-color: var(--button-color);
+  color: var(--text-color);
+}
+
+.accordion .card-body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+.accordion .btn-link {
+  color: var(--text-color);
+  text-decoration: none;
+}
+
+/* Read More Section */
+#more-info {
+  background-color: var(--button-color);
+  color: var(--text-color);
+  padding: 10px;
+  display: none;
+}
+
+.btn-custom {
+  background-color: #faff00; /* Replace with your desired color */
+  color: #ffffff; /* Text color */
+}
+@media (max-width: 768px) {
+  .navbar-brand,
+  .navbar-nav .nav-link {
+    font-size: 14px;
+  }
+
+  .btn-info,
+  .btn-warning,
+  .btn-custom {
+    padding: 8px;
+    font-size: 14px;
+  }
+
+  .card {
+    font-size: 14px;
+  }
+
+  .image-gallery img {
+    width: 80px;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar {
+    font-size: 12px;
+  }
+
+  .btn-info,
+  .btn-warning,
+  .btn-custom {
+    padding: 6px;
+    font-size: 12px;
+  }
+
+  .image-gallery img {
+    width: 60px;
+  }
+
+  .accordion .card-header,
+  .accordion .card-body {
+    font-size: 12px;
+  }
+
+  #more-info {
+    font-size: 12px;
+    padding: 8px;
+  }
+}

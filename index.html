@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day/Night Mode Toggle</title>
+    <link rel="stylesheet" href="stylesforVarifying.css">
+    <title>SMART START</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="stylesforVarifying.css">
+    <script src="script.js" defer></script> 
+</head>
+
+<body>
+    <button type="button" class="animate-btn" id="animate-btn">Animate Me!</button>
+    <main class="main-content container mt-4">
+        <button id="toggle-theme" class="btn btn-primary">
+            <img
+            id="theme-icon"
+            src="img/remove.png"
+            alt="Light Bulb Icon"
+            style="width: 30px"
+          />
+        </button>
+        <div class="row">
+            <div class="col-12 text-center">
+                <img src="img/logo2.jpg" alt="SMART START Logo" id="logo" class="mb-4">
+            </div>
+        </div>
+        
+        <p>What are the benefits of investing and startups?</p>
+        <div class="accordion-section">
+            <div class="accordion-header">Freedom and Creativity</div>
+            <div class="accordion-content">
+                <p>A startup offers freedom for those who dream of creating something new. 
+                    There are no strict rules or limitations—you choose the direction of your project.
+                     The ability to bring your own ideas to life and watch them turn into reality is 
+                     one of the key advantages of a startup. It’s a unique environment where you can 
+                     experiment, grow, and find creative solutions to challenging problems.</p>
+            </div>
+        </div>
+        
+        <div class="accordion-section">
+            <div class="accordion-header">The Chance to Change the World</div>
+            <div class="accordion-content">
+                <p>A startup is a chance to change the world. Often, startups introduce innovative 
+                    solutions that transform our daily lives for the better. Being part of a small
+                     team of like-minded individuals allows you to quickly respond to changes, adapt
+                      to new challenges, and create products that people truly need. Most importantly,
+                       you get to see the tangible impact of your work.</p>
+            </div>
+        </div>
+        <div class="accordion-section">
+            <div class="accordion-header">Rapid Growth and Personal Development</div>
+            <div class="accordion-content">
+                <p>Working in a startup is a constant challenge and a chance for 
+                    rapid growth. You won’t get stuck doing the same thing—tasks are varied, 
+                    and the responsibility is high. Startups help you develop a wide range of 
+                    skills, from project management to technical expertise. It’s the perfect
+                     environment for personal and professional growth, where each day brings
+                      new opportunities.</p>
+            </div>
+        </div>
+        <div class="accordion">
+            <div class="accordion-header" id="show-signup">
+                <h2>Sign Up</h2>
+            </div>
+            <div class="accordion-content" id="signup-form">
+                <form id="signUpForm">
+                    <div class="form-group">
+                        <input type="email" id="email" class="form-control" placeholder="Email" required>
+                        <small id="emailError" class="errorr"></small>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="username" class="form-control" placeholder="Username" required>
+                        <small id="usernameError" class="error"></small>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="phone" class="form-control" placeholder="Phone Number" required>
+                        <small id="phoneError" class="error"></small>
+                    </div>
+                    <div class="form-group">
+                        <input type="password" id="password" class="form-control" placeholder="Password" required>
+                        <small id="passwordError" class="error"></small>
+                    </div>
+                    <div class="form-group">
+                        <input type="password" id="confirm-password" class="form-control" placeholder="Confirm Password" required>
+                        <small id="confirmPasswordError" class="error"></small>
+                    </div>
+                    <button type="submit" class="btn btn-outline-success">Sign Up</button>
+                    <a href="login.html" class="btn btn-outline-success">Already have an account? Login</a>
+                </form>
+            </div>
+        </div>
+        <div id="current-date-time" class="mt-5 text-white"></div>
+            <section class="container mt-5">
+                    <img src="img/startup.png" class="thumbnail" alt="Image 1">
+                    <img src="img/innovations.png" class="thumbnail" alt="Image 2">
+                    <img src="img/investments.png" class="thumbnail" alt="Image 3">
+            </section>
+
+        <div class="read-more-section">
+            <p id="more-text" style="display:none;">A startup is a newly established company or business venture that aims to
+                 develop a unique product or service and bring it to market. Typically, startups are founded with the goal of 
+                 solving a particular problem or meeting a specific need in an innovative way. Unlike traditional businesses, 
+                 startups often focus on growth and scalability, which means they prioritize rapid development and expansion into 
+                 new markets.
+                 What Are Investments?
+                 An investment is the act of allocating money or resources to an asset, project, or venture with the expectation 
+                 of generating a return or profit in the future. Investments are critical to startups because they provide the
+                  necessary capital to help the company grow, scale, and achieve its goals. For investors, startups represent
+                   high-risk, high-reward opportunities.
+                   Startups are an essential part of innovation and economic growth. They require significant financial backing 
+                   to develop products, scale operations, and compete in the market. Investors, while facing high risks, are often
+                    rewarded with significant returns if the startup succeeds.</p>
+            <button id="read-more-btn" class="btn btn-outline-light">Read More</button>
+        </div>
+        
+    <footer class="text-center py-3 mt-5">
+        <p>2024, Site created by:</p>
+        <p>Beisekeeva Aizharkyn</p>
+        <p>Bekmanova Aizhan</p>
+    </footer>
+
+</body>
+
+</html>

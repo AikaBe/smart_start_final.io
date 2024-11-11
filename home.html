@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SMART START</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <audio id="carouselSound" src="img/drop.mp3" preload="auto"></audio>
+    <link rel="stylesheet" href="stylesforHome.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="img/lojo.png">SMART START</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link" href="Chat_page.html">Chat</a></li>
+                <li class="nav-item"><a class="nav-link" href="Service_page.html">Services</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Contact us</a></li>
+                <li class="nav-item"><a class="nav-link" href="Profile.html">Profile</a></li>
+            </ul>
+            <button id="toggle-theme" class="btn btn-secondary ml-auto">
+                <img
+                id="theme-icon"
+                src="img/remove.png"
+                alt="Light Bulb Icon"
+                style="width: 30px"
+              />
+            </button>
+        </div>
+    </nav>
+    <div class="container mt-4 d-flex justify-content-center align-items-center" style="min-height: 100vh;">
+        
+        <div class="row w-100">
+            <div class="col-lg-8 col-md-12 main-content mx-auto">
+                <header class="header bg-dark text-white p-3 mb-3">
+                    <h1>Hi, User!</h1>
+                </header>
+                <section>
+                    <h2>Live Jobs</h2>
+                    <p>Find your next opportunity among the available listings below.</p>
+                    <div id="jobCarousel" class="carousel mt-4" data-interval="false"> 
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Front End Developer</h5>
+                                        <p class="card-text">45 Applications</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Back End Developer</h5>
+                                        <p class="card-text">30 Applications</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Full Stack Developer</h5>
+                                        <p class="card-text">25 Applications</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h5 class="card-title">UI/UX Designer</h5>
+                                        <p class="card-text">20 Applications</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <a class="carousel-control-prev" href="#jobCarousel" role="button" data-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="carousel-control-next" href="#jobCarousel" role="button" data-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                    </div>
+                </section>
+                <blockquote class="blockquote">
+                    <p>“Choose a job you love, and you will never have to work a day in your life.” — Confucius</p>
+                </blockquote>
+                <form id="jobForm">
+                    <div class="form-group" id="inputContainer">
+                        <label for="email">Email:</label>
+                        <input type="email" class="form-control" id="email" name="email">
+                    </div>
+                    <div class="form-group">
+                        <label for="position">Position:</label>
+                        <select class="form-control" id="position" name="position">
+                            <option value="frontend">Front End Developer</option>
+                            <option value="backend">Back End Developer</option>
+                            <option value="fullstack">Full Stack Developer</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message:</label>
+                        <textarea class="form-control" id="message" name="message" rows="4"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Apply</button>
+                </form>
+                <section>
+                    <button id="showTimeBtn" class="btn btn-warning">Show Current Time</button>
+                    <p id="currentTime" class="mt-2"></p>
+                </section>                
+            </div>
+        </div>
+    </div>
+    
+    <div id="contactUsContent" class="popup d-none">
+        <div class="popup-content">
+            <span id="closePopup" class="close">&times;</span>
+            <h2>Contact Us</h2>
+            <form id="contactForm">
+                <div class="form-group">
+                    <label for="contactEmail">Email:</label>
+                    <input type="email" class="form-control" id="contactEmail" name="contactEmail" required>
+                </div>
+                <div class="form-group">
+                    <label for="contactMessage">Message:</label>
+                    <textarea class="form-control" id="contactMessage" name="contactMessage" rows="4" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-success">Send</button>
+            </form>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz4fnFO9gybRzS9R+DgY6LC8+aRrD56hWZ4T9NUBD3PCN3kD+u1zR3Hc3c" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="script.js"></script> 
+</body>
+</html>
